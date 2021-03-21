@@ -6,7 +6,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: echo K8S Terraform Azure!
+- script: echo K8S Terraform Azure1!
   displayName: 'Run a one-line script'
 - task: DownloadSecureFile@1
   name: publickey
