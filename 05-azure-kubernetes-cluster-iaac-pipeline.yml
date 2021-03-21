@@ -28,7 +28,7 @@ steps:
     workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure/kubernetes'
     commandOptions: '-var client_id=$(client_id) -var client_secret=$(client_secret) -var ssh_public_key=$(publickey.secureFilePath)'
     backendType: 'azurerm'
-    backendServiceArm: 'azure-resource-manager-service-connection'
+    backendServiceArm: 'Azure for Students(eafe2e7e-2536-4b90-bcd3-5b494ece48b7)'
     ensureBackend: true
     backendAzureRmResourceGroupName: 'terraform-backend-rg'
     backendAzureRmResourceGroupLocation: 'eastus'
