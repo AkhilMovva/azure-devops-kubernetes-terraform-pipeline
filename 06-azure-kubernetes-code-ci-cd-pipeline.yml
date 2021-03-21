@@ -5,8 +5,7 @@ resources:
 - repo: self
 
 variables:
-  tag: 5 
-#'$(Build.BuildId)'
+  tag: '$(Build.BuildId)'
 
 stages:
 
@@ -22,13 +21,13 @@ stages:
     pool:
       vmImage: 'ubuntu-latest'
     steps:
-    # - task: Docker@2
-    #   inputs:
-    #     containerRegistry: 'akhilmovva-docker-hub'
-    #     repository: 'akhilmovva/currency-exchange-devops'
-    #     command: 'buildAndPush'
-    #     Dockerfile: '**/Dockerfile'
-    #     tags: '$(tag)'
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'akhilmovva-docker-hub'
+        repository: 'akhilmovva/currency-exchange-devops'
+        command: 'buildAndPush'
+        Dockerfile: '**/Dockerfile'
+        tags: '$(tag)'
     - task: CopyFiles@2
       inputs:
         SourceFolder: '$(System.DefaultWorkingDirectory)'
