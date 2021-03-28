@@ -1,7 +1,7 @@
 # aws --version
 # aws eks --region us-east-1 update-kubeconfig --name in28minutes-cluster
 # Uses default VPC and Subnet. Create Your Own VPC and Private Subnets for Prod Usage.
-# terraform-backend-state-akhil-123
+# terraform-backend-state-in28minutes-123
 # AKIA4AHVNOD7OOO6T4KI
 
 
@@ -26,17 +26,16 @@ provider "kubernetes" {
   cluster_ca_certificate = base64decode(data.aws_eks_cluster.cluster.certificate_authority.0.data)
   token                  = data.aws_eks_cluster_auth.cluster.token
   load_config_file       = false
-  version                = "~> 1.9"
+ // version                = "~> 1.9"
 }
 
 module "akhil-cluster" {
   source          = "terraform-aws-modules/eks/aws"
   cluster_name    = "akhil-cluster"
-  cluster_version = "1.14"
-  subnets         = ["subnet-dca582d2", "subnet-98610ab9"] #CHANGE
+  cluster_version = "1.17"
+  subnets         = ["subnet-1885b855", "subnet-6d97fa0b", "subnet-98610ab9"] #CHANGE # Donot choose subnet from us-east-1e
   #subnets = data.aws_subnet_ids.subnets.ids
   vpc_id          = aws_default_vpc.default.id
-
   #vpc_id         = "vpc-1234556abcdef"
 
   node_groups = [
