@@ -57,7 +57,7 @@ data "aws_eks_cluster_auth" "cluster" {
 }
 
 
-# We will use ServiceAccount to connect to K8S Cluster in CI/CD mode
+# ServiceAccount to connect to K8S Cluster in CI/CD mode
 # ServiceAccount needs permissions to create deployments 
 # and services in default namespace
 resource "kubernetes_cluster_role_binding" "example" {
