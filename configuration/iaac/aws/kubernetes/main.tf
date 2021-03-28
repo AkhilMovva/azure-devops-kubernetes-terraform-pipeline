@@ -31,7 +31,7 @@ provider "kubernetes" {
 
 module "akhil-cluster" {
   source          = "terraform-aws-modules/eks/aws"
-  cluster_name    = "in28minutes-cluster"
+  cluster_name    = "akhil-cluster"
   cluster_version = "1.14"
   subnets         = ["subnet-dca582d2", "subnet-98610ab9"] #CHANGE
   #subnets = data.aws_subnet_ids.subnets.ids
